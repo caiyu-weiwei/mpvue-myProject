@@ -7,7 +7,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "销售工作台",
+    "navigationBarTitleText": "小程序工作台",
     "navigationBarTextStyle": "black"
   }
 }
