@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "mpvue": "^1.0.11",
+    "mpvue-lint": "^1.0.72",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
