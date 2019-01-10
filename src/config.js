@@ -2,11 +2,13 @@
  * 配置
  */
 // 生产
-const host = 'https://www.xxx.com'
+const hostPro = 'https://www.xxx.com'
+const hostTest = 'http://shield-test.zmlearn.com/'
 const appid = ''
 const appkey = ''
 const config = {
-  host,
+  hostPro,
+  hostTest,
   appid,
   appkey
 }
