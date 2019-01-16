@@ -7,6 +7,7 @@
 */
 
 // import 配置文件
+// import Vue from 'vue'
 import config from '@/config'
 
 // npm引入方式
@@ -35,11 +36,11 @@ fly.interceptors.request.use(request => {
   // 打印出请求体
   console.log(request.body)
   // 终止请求
-  var err = new Error('')
-  err.request = request
-  return Promise.reject(new Error(''))
+  // var err = new Error('')
+  // err.request = request
+  // return Promise.reject(new Error(''))
   // 可以显式返回config, 也可以不返回，没有返回值时拦截器中默认返回config
-  // return request
+  return request
 })
 
 // 添加响应拦截器, 响应拦截器会在then/catch处理之前执行
@@ -54,4 +55,6 @@ fly.interceptors.response.use(
     return Promise.resolve('发生网络错误...')
   }
 )
+// 将fly实例挂在vue原型上
+// Vue.prototype.$http = fly
 export default fly

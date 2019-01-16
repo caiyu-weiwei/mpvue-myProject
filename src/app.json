@@ -1,13 +1,36 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/logs/main",
-    "pages/counter/main"
+    "pages/courseCalendar/main",
+    "pages/students/main",
+    "pages/message/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "小程序工作台",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/courseCalendar/main",
+        "text": "课程日历"
+      },
+      {
+        "pagePath": "pages/students/main",
+        "text": "我的学生"
+      },
+      {
+        "pagePath": "pages/message/main",
+        "text": "我的信息"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": ["wxe5f52902cf4de896"]
 }

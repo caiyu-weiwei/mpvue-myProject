@@ -2,8 +2,8 @@ import fly from './config'
 import qs from 'qs'
 import config from '@/config'
 const hostTest = config.hostTest
-const appKey = config.appKey
-const appid = config.appid
+// const appKey = config.appKey
+// const appid = config.appid
 
 /**
  * 用法
@@ -24,5 +24,5 @@ export const get = (params) => {
 
 // 登录请求
 export const login = (params) => {
-  return fly.post(`${hostTest}/login`, params)
+  return fly.post(`${hostTest}login`, params)
 }
