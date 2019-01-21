@@ -12,18 +12,27 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "color": "#999DA3",
+    "selectedColor": "#F54F50",
+    "backgroundColor": "#fff",
     "list": [
       {
         "pagePath": "pages/courseCalendar/main",
-        "text": "课程日历"
+        "text": "课程日历",
+        "iconPath": "images/tab_calendar@2x.png",
+        "selectedIconPath": "images/tab_calendar_selected@2x.png"
       },
       {
-        "pagePath": "pages/students/main",
-        "text": "我的学生"
+        "pagePath": "pages/index/main",
+        "text": "我的学生",
+        "iconPath": "images/tab_student@2x.png",
+        "selectedIconPath": "images/tab_student_selected@2x.png"
       },
       {
         "pagePath": "pages/message/main",
-        "text": "我的信息"
+        "text": "我的信息",
+        "iconPath": "images/tab_information@2x.png",
+        "selectedIconPath": "images/tab_information_selected@2x.png"
       }
     ]
   },

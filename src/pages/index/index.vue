@@ -18,7 +18,7 @@
         :size="warnSize"
         type="warn"
         :disabled="disabled"
-        @click="handleLogin"
+        @click="bindViewTap"
       >
         登录
       </button>
@@ -94,22 +94,24 @@ export default {
       if (str === 'pwd') this.login.pwd = ''
     },
     handleLogin () {
-      console.log('..........login/..........')
-      console.log(this.login)
-      console.log('login', login)
       login(this.login)
         .then(res => {
-          const { code, data } = res
+          const { data, code } = res.data
           console.log('res', res)
           if (code === '0') {
-            console.log(data)
-            console.log(this.setOpenId(data.token))
-            // if (data.token) this.
+            console.log('data', data)
+            this.setOpenId(data.token)
+            if (data.token) {
+              console.log('data.token', data.token)
+              this.$router.push({path: '/pages/courseCalendar/main', query: {}})
+              // const url = '../courseCalendar/main'
+              // wx.navigateTo({url})
+            }
           }
         })
     },
     bindViewTap () {
-      const url = '../logs/main'
+      const url = '../courseCalendar/main'
       wx.navigateTo({ url })
     },
     getUserInfo () {
@@ -175,7 +177,7 @@ export default {
   color: #fff;
   background-color: #999;
   margin-left: 50px;
-  float: right;
+  /* float: right; */
 }
 
 .borderDef{
