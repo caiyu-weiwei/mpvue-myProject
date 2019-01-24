@@ -36,6 +36,8 @@
           if (this.type === 'header') {
             temp[i]['text'] = calendarTitle[i]
           } else {
+            console.log('this.rowData[i] i', i)
+            console.log('this.rowData[i]', this.rowData[i])
             temp[i]['text'] = this.rowData[i]['text']
             temp[i]['isCurrentMonth'] = this.rowData[i]['isCurrentMonth']
             temp[i]['isCurrentDate'] = this.rowData[i]['isCurrentDate']
@@ -58,10 +60,8 @@
 .container-row{
   width: 100%;
   height: 40px;
-  background-color: #fff;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  flex: 1;
 }
 </style>

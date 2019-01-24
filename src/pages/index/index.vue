@@ -41,7 +41,7 @@ export default {
       warnSize: 'default',
       isAccount: false,
       isPwd: false,
-      iconEye: require('@/images/icon_eye_close@2x.png')
+      iconEye: ''
     }
   },
   computed: {

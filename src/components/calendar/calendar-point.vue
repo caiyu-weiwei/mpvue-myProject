@@ -17,7 +17,7 @@
 
 <style scoped>
 .ball-wrapper{
-  width: 50px;
+  width: 30px;
   height: 5px;
 }
 .ball{

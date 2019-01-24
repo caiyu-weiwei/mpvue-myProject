@@ -1,17 +1,23 @@
 <template>
-  <div class="calendar-wrapper" :class="isClick ? 'is-click' : ''" v-if="type === 'body'" @click="cellClick(text)">
-    <div class="cell cell-body" :class="!isCurrentMonth ? 'notCurrentMonthColor' : isCurrentDate ? 'isCurrentDateColor' : ''">{{text}}</div>
-    <calendar-point :isClick="isClick"></calendar-point>
+  <div class="calendar-wrapper" v-if="type === 'body'" @click="cellClick(text)">
+    <div class="cell-wrapper" :class="isClick ? 'is-click' : ''">
+      <div class="cell cell-body" :class="!isCurrentMonth ? 'notCurrentMonthColor' : isCurrentDate ? 'isCurrentDateColor' : ''">{{text}}</div>
+      <calendar-point :isClick="isClick"></calendar-point>
+    </div>
   </div>
   <div class="calendar-wrapper" v-else>
-    <div class="cell cell-header">{{text}}</div>
+    <div class="cell-wrapper">
+      <div class="cell cell-header">{{text}}</div>
+    </div>
   </div>
 </template>
 
 <script>
   import calendarPoint from './calendar-point'
   export default {
-    data () {},
+    data () {
+      return {}
+    },
     components: {
       calendarPoint
     },
@@ -39,6 +45,7 @@
     },
     methods: {
       cellClick (text) {
+        if (!this.isCurrentMonth) return
         console.log('cellClick', text)
         this.$emit('cellClick', text)
       }
@@ -48,20 +55,22 @@
 
 <style scoped>
 .calendar-wrapper{
-  width: 50px;
-  height: 50px;
+  width: 54px;
+  height: 54px;
   display: flex;
-  flex-direction: column;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
+}
+.cell-wrapper{
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
 }
 .cell{
   width: 100%;
-  height: 30px;
-  line-height: 30px;
   font-size: 14px;
   text-align: center;
-  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .cell-header{
   color: #CCC;
