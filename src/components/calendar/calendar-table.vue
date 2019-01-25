@@ -139,6 +139,7 @@
       cellClick (data) {
         console.log('parentdata', data)
         this.clickCalendar = data
+        this.$emit('getClickDate', this.year, this.month, data)
       },
       handleChangeDate (year, month) {
         this.year = year

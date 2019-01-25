@@ -17,13 +17,13 @@
     "backgroundColor": "#fff",
     "list": [
       {
-        "pagePath": "pages/courseCalendar/main",
+        "pagePath": "pages/index/main",
         "text": "课程日历",
         "iconPath": "images/tab_calendar@2x.png",
         "selectedIconPath": "images/tab_calendar_selected@2x.png"
       },
       {
-        "pagePath": "pages/index/main",
+        "pagePath": "pages/students/main",
         "text": "我的学生",
         "iconPath": "images/tab_student@2x.png",
         "selectedIconPath": "images/tab_student_selected@2x.png"
