@@ -3,7 +3,8 @@
     "pages/index/main",
     "pages/courseCalendar/main",
     "pages/students/main",
-    "pages/message/main"
+    "pages/message/main",
+    "pages/studentInfo/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

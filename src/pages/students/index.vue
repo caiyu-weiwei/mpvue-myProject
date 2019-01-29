@@ -6,7 +6,7 @@
       </div>
       <scroll-view
         scroll-y
-        style="height: 550px;"
+        style="height: 572px;"
         @scrolltoupper="upper"
         @scrolltolower="lower"
         @scroll="scroll"
@@ -15,7 +15,7 @@
           <div class="message-capital">
             B
           </div>
-          <div class="message-item">
+          <div class="message-item" @click="handleClickItem">
             <student-message></student-message>
           </div>
           <div class="message-item">
@@ -72,6 +72,14 @@
       handleSearch (searchKey) {
         console.log('parent searchKey', searchKey)
       },
+      handleClickItem () {
+        this.$router.push({
+          path: '/pages/studentInfo/main',
+          query: {
+            id: 1
+          }
+        })
+      },
       upper (e) {
         console.log('upper', e)
       },
@@ -89,7 +97,7 @@
 <style scoped>
 .student-container{
   width: 100%;
-  height: 564px;
+  height: 566px;
   background-color: #F4F5F7;
   padding: 14px 0;
   box-sizing: border-box;
