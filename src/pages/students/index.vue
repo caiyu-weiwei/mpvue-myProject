@@ -4,26 +4,49 @@
       <div class="search-bar">
         <search-bar @handleSearch = handleSearch></search-bar>
       </div>
-      <div class="message-wrapper" v-if="dataList.length">
-        <div class="message-capital">
-          B
+      <scroll-view
+        scroll-y
+        style="height: 550px;"
+        @scrolltoupper="upper"
+        @scrolltolower="lower"
+        @scroll="scroll"
+        >
+        <div class="message-wrapper" v-if="dataList.length">
+          <div class="message-capital">
+            B
+          </div>
+          <div class="message-item">
+            <student-message></student-message>
+          </div>
+          <div class="message-item">
+            <student-message></student-message>
+          </div>
+          <div class="message-item">
+            <student-message></student-message>
+          </div>
+          <div class="message-item">
+            <student-message></student-message>
+          </div>
+          <div class="message-item">
+            <student-message></student-message>
+          </div>
+          <div class="message-item">
+            <student-message></student-message>
+          </div>
+          <div class="message-item">
+            <student-message></student-message>
+          </div>
+          <div class="lower" v-if="isLower">
+            到底啦~
+          </div>
         </div>
-        <div class="message-item">
-          <student-message></student-message>
+        <div class="data-empty" v-else>
+          <img :src="imgEmptyUrl" alt="">
+          <div>
+            未查询到该学生信息
+          </div>
         </div>
-        <div class="message-item">
-          <student-message></student-message>
-        </div>
-        <div class="message-item">
-          <student-message></student-message>
-        </div>
-      </div>
-      <div class="data-empty" v-else>
-        <img :src="imgEmptyUrl" alt="">
-        <div>
-          未查询到该学生信息
-        </div>
-      </div>
+      </scroll-view>
     </div>
   </div>
 </template>
@@ -34,8 +57,11 @@
   export default {
     data () {
       return {
-        dataList: [],
-        imgEmptyUrl: '/static/images/img_emptystate@2x.png'
+        dataList: [{}],
+        imgEmptyUrl: '/static/images/img_emptystate@2x.png',
+        toView: 'red',
+        scrollTop: 100,
+        isLower: false
       }
     },
     components: {
@@ -45,6 +71,16 @@
     methods: {
       handleSearch (searchKey) {
         console.log('parent searchKey', searchKey)
+      },
+      upper (e) {
+        console.log('upper', e)
+      },
+      lower (e) {
+        console.log('lower', e)
+        this.isLower = true
+      },
+      scroll (e) {
+        console.log('scroll', e)
       }
     }
   }
@@ -53,7 +89,7 @@
 <style scoped>
 .student-container{
   width: 100%;
-  height: 566px;
+  height: 564px;
   background-color: #F4F5F7;
   padding: 14px 0;
   box-sizing: border-box;
@@ -68,6 +104,7 @@
 .message-wrapper{
   width: 100%;
   height: 520px;
+  z-index: -1;
 }
 .message-capital{
   width: 100%;
@@ -96,5 +133,12 @@
 .data-empty > img{
   width: 114px;
   height: 139px;
+}
+.lower{
+  width: 100%;
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  margin: 14px 0;
 }
 </style>

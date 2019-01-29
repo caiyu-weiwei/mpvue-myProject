@@ -1,7 +1,7 @@
 <template>
   <div class="search-box">
     <div class="search">
-      <img :src="searchUrl" alt="" @click="handleSearch">
+      <icon class="icon" type="search" size="16" @click="handleSearch"/>
       <input v-model="searchKey" type="text" :placeholder="placeholder">
     </div>
   </div>
@@ -12,7 +12,6 @@
   export default {
     data () {
       return {
-        searchUrl: '/static/images/search_icon@2x.png',
         searchKey: ''
       }
     },
@@ -47,9 +46,7 @@
   justify-content: center;
   align-items: center;
 }
-.search > img {
-  width: 5%;
-  height: 50%;
+.search > icon {
   margin-right: 3%;
 }
 .search > input{
