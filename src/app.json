@@ -18,7 +18,7 @@
     "backgroundColor": "#fff",
     "list": [
       {
-        "pagePath": "pages/index/main",
+        "pagePath": "pages/courseCalendar/main",
         "text": "课程日历",
         "iconPath": "images/tab_calendar@2x.png",
         "selectedIconPath": "images/tab_calendar_selected@2x.png"
@@ -30,7 +30,7 @@
         "selectedIconPath": "images/tab_student_selected@2x.png"
       },
       {
-        "pagePath": "pages/message/main",
+        "pagePath": "pages/index/main",
         "text": "我的信息",
         "iconPath": "images/tab_information@2x.png",
         "selectedIconPath": "images/tab_information_selected@2x.png"

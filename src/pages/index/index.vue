@@ -1,28 +1,29 @@
 <template>
   <div class="container-login">
-
-    <div class="login">账户登录</div>
-    <form class="form-container">
-      <div :class="computedClassStr" class="form-item">
-        <input type="text" class="form-control" placeholder-style="color:#CCC; fontSize: 18px" v-model="login.account" placeholder="请输入你的登录账号" @input="handleInput('account')" @blur="handleBlur('account')" @focus="handleFocus('account')"/>
-        <!-- <i v-if="isAccount" class="icon-clear" @click="handleClear('account')">×</i> -->
-      </div>
-      <div :class="computedClassStr1" class="form-item">
-        <input type="password" class="form-control" placeholder-style="color:#CCC; fontSize: 18px" v-model="login.pwd" placeholder="请输入登录密码" @input="handleInput('pwd')" @blur="handleBlur('pwd')" @focus="handleFocus('pwd')"/>
-        <!-- <i v-if="isPwd" class="icon-clear" @click="handleClear('pwd')">×</i> -->
-        <!-- <img class="icon-eye" :src="iconEye" alt=""> -->
-      </div>
-      <div class="tip">如果忘记密码，请联系主管或相关技术人员</div>
-      <button
-        class="login-btn"
-        :size="warnSize"
-        type="warn"
-        :disabled="disabled"
-        @click="bindViewTap"
-      >
-        登录
-      </button>
-    </form>
+    <div class="login-wrapper">
+      <div class="login">账户登录</div>
+      <form class="form-container">
+        <div :class="computedClassStr" class="form-item">
+          <input type="text" class="form-control" placeholder-style="color:#CCC; fontSize: 18px" v-model="login.account" placeholder="请输入你的登录账号" @input="handleInput('account')" @blur="handleBlur('account')" @focus="handleFocus('account')"/>
+          <!-- <i v-if="isAccount" class="icon-clear" @click="handleClear('account')">×</i> -->
+        </div>
+        <div :class="computedClassStr1" class="form-item">
+          <input type="password" class="form-control" placeholder-style="color:#CCC; fontSize: 18px" v-model="login.pwd" placeholder="请输入登录密码" @input="handleInput('pwd')" @blur="handleBlur('pwd')" @focus="handleFocus('pwd')"/>
+          <!-- <i v-if="isPwd" class="icon-clear" @click="handleClear('pwd')">×</i> -->
+          <!-- <img class="icon-eye" :src="iconEye" alt=""> -->
+        </div>
+        <div class="tip">如果忘记密码，请联系主管或相关技术人员</div>
+        <button
+          class="login-btn"
+          :size="warnSize"
+          type="warn"
+          :disabled="disabled"
+          @click="bindViewTap"
+        >
+          登录
+        </button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -103,16 +104,20 @@ export default {
             this.setOpenId(data.token)
             if (data.token) {
               console.log('data.token', data.token)
-              this.$router.push({path: '/pages/courseCalendar/main', query: {}})
               // const url = '../courseCalendar/main'
               // wx.navigateTo({url})
+              this.$router.push({
+                path: '/pages/courseCalendar/main'
+              })
             }
           }
         })
     },
     bindViewTap () {
-      const url = '../courseCalendar/main'
-      wx.navigateTo({ url })
+      console.log('login.......')
+      this.$router.push({
+        path: '/pages/courseCalendar/main'
+      })
     },
     getUserInfo () {
       // 调用登录接口

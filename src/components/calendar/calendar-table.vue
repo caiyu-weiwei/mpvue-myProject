@@ -94,15 +94,18 @@
         }
         if (rowIndex === rows) {
           for (let i = secondRowFirstDayisWhat + (rows - 2) * 7; i < lastDay + 1; i++) {
+            console.log('rowIndex', rows)
+            console.log('rowIndex i', i)
             let isCurrentDate = false
             let isClick = false
+            let subI = i
             if (i === currentDate && month === currentMonth) {
-              i = '今'
+              subI = '今'
               isCurrentDate = true
               this.currentDateRowIndex = rowIndex
             }
             if (i === this.clickCalendar) isClick = true
-            dateList.push({'text': i, 'isCurrentMonth': true, 'isCurrentDate': isCurrentDate, 'isClick': isClick})
+            dateList.push({'text': subI, 'isCurrentMonth': true, 'isCurrentDate': isCurrentDate, 'isClick': isClick})
           }
           for (let i = 1; i < 7 * rows + secondRowFirstDayisWhat - lastDay - 7; i++) {
             dateList.push({'text': i, 'isCurrentMonth': false, 'isCurrentDate': false})
