@@ -7,7 +7,7 @@
       <div class="student-info">
         <div class="student-name">
           <span>常晓雪</span>
-          <img :src="phoneUrl" alt="">
+          <img :src="phoneUrl" alt="" @click="handleClickPhone">
         </div>
         <div class="student-course">
           <span>年级：小三</span>
@@ -25,6 +25,11 @@
       return {
         studentHeaderUrl: '/static/images/default_header.png',
         phoneUrl: '/static/images/icon_telephone@2x.png'
+      }
+    },
+    methods: {
+      handleClickPhone () {
+        this.$emit('handleClickPhone', '常晓雪')
       }
     }
   }
