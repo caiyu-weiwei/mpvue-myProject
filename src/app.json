@@ -4,7 +4,8 @@
     "pages/courseCalendar/main",
     "pages/students/main",
     "pages/message/main",
-    "pages/studentInfo/main"
+    "pages/studentInfo/main",
+    "pages/studentCourseCalendar/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -74,10 +74,8 @@
       handleCheckMore (data) {
         console.log(data)
         console.log('111111')
-        // let url = '../courseCalendar/main'
-        // wx.navigateTo({ url })
         this.$router.push({
-          path: '../courseCalendar/main',
+          path: '/pages/studentCourseCalendar/main',
           query: {id: 1}
         })
       },
