@@ -5,31 +5,35 @@
       <calendar-table @getClickDate="getClickDate"></calendar-table>
     </div>
 
-    <div class="data-list">
-      <div class="course-date">
-        <span></span>
-        <span>{{month + 1}}月{{day}}日</span>
-      </div>
-      <div class="course-message">
-        <div class="course-detail">
-          <course-detail></course-detail>
+    <cover-view
+      scroll-y
+      style="height: 550px;"
+      @scrolltoupper="upper"
+      @scrolltolower="lower"
+      @scroll="scroll"
+    >
+      <div class="data-list">
+        <div class="course-date">
+          <span></span>
+          <span>{{month + 1}}月{{day}}日</span>
         </div>
-        <div class="course-detail">
-          <course-detail></course-detail>
+        <div class="course-message">
+          <div class="course-detail">
+            <course-detail></course-detail>
+          </div>
+          <div class="course-detail">
+            <course-detail></course-detail>
+          </div>
+          <div class="course-detail">
+            <course-detail></course-detail>
+          </div>
         </div>
-        <div class="course-detail">
-          <course-detail></course-detail>
-        </div>
+        <div class="empty-data">
+          <img src="/static/images/img_emptystate@2x.png" alt="">
+          <div class="hint">今天没有学生上课哦</div>
+        </div>   
       </div>
-      <div class="empty-data">
-        <img src="/static/images/img_emptystate@2x.png" alt="">
-        <div class="hint">今天没有学生上课哦</div>
-      </div>
-      
-      
-    </div>
-
-    <div></div>
+    </cover-view>
 
   </div>
 </template>
@@ -55,6 +59,15 @@
         this.year = year
         this.month = month
         this.day = day
+      },
+      upper (e) {
+        console.log(e)
+      },
+      lower (e) {
+        console.log(e)
+      },
+      scroll (e) {
+        console.log(e)
       }
     }
   }

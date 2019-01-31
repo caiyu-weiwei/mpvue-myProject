@@ -30,15 +30,7 @@
     <div class="info-footer">
       <student-info-footer></student-info-footer>
     </div>
-    <!-- <cover-view class="pop-up" v-if="modelHidden">
-      <cover-view class="pop-up-container">
-        <cover-view class="tip-subTitle">确认给“常晓雪”同学拨打电话吗？确认后请注意接通系统来电</cover-view>
-        <cover-view class="btn-group">
-          <cover-view class="btn-cancel" >取消</cover-view>
-          <cover-view class="btn-comfirm" >确定</cover-view>
-        </cover-view>
-      </cover-view>
-    </cover-view> -->
+
     <div>
       <cover-view :modelHidden="modelHidden" @handleClickCancle="handleClickCancle" @handleClickComfirm="handleClickComfirm"></cover-view>
     </div>
@@ -81,6 +73,13 @@
       },
       handleCheckMore (data) {
         console.log(data)
+        console.log('111111')
+        // let url = '../courseCalendar/main'
+        // wx.navigateTo({ url })
+        this.$router.push({
+          path: '../courseCalendar/main',
+          query: {id: 1}
+        })
       },
       handleHistoryCourse (data) {
         console.log(data)
