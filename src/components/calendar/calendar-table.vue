@@ -83,13 +83,14 @@
           for (let i = 1; i < 8 - firstDayisWhat; i++) {
             let isCurrentDate = false
             let isClick = false
+            let subI = i
             if (i === currentDate && month === currentMonth) {
-              i = '今'
+              subI = '今'
               isCurrentDate = true
               this.currentDateRowIndex = rowIndex
             }
             if (i === this.clickCalendar) isClick = true
-            dateList.push({'text': i, 'isCurrentMonth': true, 'isCurrentDate': isCurrentDate, 'isClick': isClick})
+            dateList.push({'text': subI, 'isCurrentMonth': true, 'isCurrentDate': isCurrentDate, 'isClick': isClick})
           }
         }
         if (rowIndex === rows) {
