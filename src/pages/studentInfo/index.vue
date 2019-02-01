@@ -34,6 +34,9 @@
     <div>
       <cover-view :modelHidden="modelHidden" @handleClickCancle="handleClickCancle" @handleClickComfirm="handleClickComfirm"></cover-view>
     </div>
+    <div>
+      <system-tip v-if="isPopUp"></system-tip>
+    </div>
   </div>
 </template>
 
@@ -45,10 +48,12 @@
   import feedbackCourse from '@/components/feedbackCourse/index'
   import studentInfoFooter from '@/components/studentInfoFooter/index'
   import coverView from '@/components/coverView/index'
+  import systemTip from '@/components/systemTip/index'
   export default {
     data () {
       return {
-        modelHidden: false
+        modelHidden: false,
+        isPopUp: false
       }
     },
     components: {
@@ -58,7 +63,8 @@
       remainingCourse,
       feedbackCourse,
       studentInfoFooter,
-      coverView
+      coverView,
+      systemTip
     },
     methods: {
       handleClickPhone (data) {
@@ -67,13 +73,14 @@
       },
       handleClickComfirm () {
         this.modelHidden = false
+        this.isPopUp = true
+        this.setTimeoutClosePop()
       },
       handleClickCancle () {
         this.modelHidden = false
       },
       handleCheckMore (data) {
         console.log(data)
-        console.log('111111')
         this.$router.push({
           path: '/pages/studentCourseCalendar/main',
           query: {id: 1}
@@ -93,6 +100,11 @@
       },
       scroll (e) {
         console.log(e)
+      },
+      setTimeoutClosePop () {
+        setTimeout(() => {
+          this.isPopUp = false
+        }, 3000)
       }
     }
   }
