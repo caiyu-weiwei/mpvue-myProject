@@ -16,7 +16,7 @@
             <stay-on-course @handleCheckMore="handleCheckMore"></stay-on-course>
           </div>
           <div>
-            <history-course @handleHistoryCourse="handleHistoryCourse"></history-course>
+            <history-course @handleHistoryCourse="handleHistoryCourse" @handleCallTeacher="handleCallTeacher"></history-course>
           </div>
           <div>
             <remaining-course></remaining-course>
@@ -88,6 +88,14 @@
       },
       handleHistoryCourse (data) {
         console.log(data)
+        this.$router.push({
+          path: '/pages/currentHistoryCourse/main',
+          query: {id: 1}
+        })
+      },
+      handleCallTeacher (data) {
+        console.log(data)
+        this.modelHidden = true
       },
       handleClickFeedback (data) {
         console.log(data)

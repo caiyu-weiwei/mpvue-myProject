@@ -5,7 +5,8 @@
     "pages/students/main",
     "pages/message/main",
     "pages/studentInfo/main",
-    "pages/studentCourseCalendar/main"
+    "pages/studentCourseCalendar/main",
+    "pages/currentHistoryCourse/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

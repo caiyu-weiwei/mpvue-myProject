@@ -1,10 +1,6 @@
 <template>
   <div class="course-wrapper">
     <div class="course-box">
-      <div class="course-type">
-        <span>最近历史课程</span>
-        <span @click="handleCheckMore">更多 ></span>
-      </div>
       <div class="course-teacher">
         <span>上课科目：</span>
         <span>数理逻辑</span>
@@ -31,9 +27,6 @@
       }
     },
     methods: {
-      handleCheckMore () {
-        this.$emit('handleHistoryCourse', 1)
-      },
       handleCallTeacher () {
         this.$emit('handleCallTeacher', 'call teacher')
       }
@@ -54,22 +47,6 @@
   width: 92%;
   height: 100%;
   margin: 0 auto;
-}
-.course-box > div:not(:nth-child(1)){
-  margin-top: 14px;
-}
-.course-type > span:nth-child(1){
-  display: inline-block;
-  width: 75.5%;
-  color: #333;
-  font-size: 20px;
-}
-.course-type > span:nth-child(2){
-  display: inline-block;
-  width: 24.5%;
-  color: #999;
-  font-size: 14px;
-  text-align: right;
 }
 .course-teacher{
   display: flex;
